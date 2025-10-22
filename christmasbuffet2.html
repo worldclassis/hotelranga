@@ -415,15 +415,13 @@
             renderInputFields();
             renderA4Page();
 
+            // FIX: Explicitly check for the button and add a console log for debugging
             const printButton = document.getElementById('print-button');
 
             if (printButton) {
                 printButton.addEventListener('click', () => {
-                    console.log('Attempting to trigger print dialogue with a small delay...');
-                    // FIX: Using setTimeout to attempt to work around iframe restrictions
-                    setTimeout(() => {
-                        window.print();
-                    }, 100); 
+                    console.log('Attempting to trigger print dialogue...');
+                    window.print();
                 });
             } else {
                 console.error("Print button element not found!");
